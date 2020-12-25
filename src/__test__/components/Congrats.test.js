@@ -1,11 +1,14 @@
 import React from 'react'
 import { shallow } from 'enzyme'
-import 'jest-enzyme'
-
 import Congrats from '../../components/Congrats'
 import { findByTestAtrr, checkProps } from '../../../test/testUtils'
 
-const setup = (props = {}) => shallow(<Congrats {...props} />)
+const defaultProps = { success: false }
+
+const setup = (props = {}) => {
+  const setupProps = { ...defaultProps, ...props }
+  return shallow(<Congrats {...setupProps} />)
+}
 
 test('renders without errors', () => {
   const wrapper = setup({ success: false })
