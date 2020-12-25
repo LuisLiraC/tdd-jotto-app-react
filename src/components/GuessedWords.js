@@ -24,10 +24,10 @@ function GuessedWords({ guessedWords }) {
               <th>Matching Letters</th>
             </tr>
           </thead>
+          <tbody>
+            { guessedWordsRows }
+          </tbody>
         </table>
-        <tbody>
-          { guessedWordsRows }
-        </tbody>
       </div>
     )
   }
